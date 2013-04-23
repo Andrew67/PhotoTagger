@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 public class MainActivity extends Activity {
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
 		final GridView grid = (GridView) findViewById(R.id.gridview);
 		final ThumbnailAdapter thumbnails = new ThumbnailAdapter(this);
 		grid.setAdapter(thumbnails);
-		grid.setOnItemClickListener(new OnItemClickListener() {
+		grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position,
@@ -52,6 +51,7 @@ public class MainActivity extends Activity {
 		Log.d("MainActivity", "menu: " + item.getItemId());
 		switch (item.getItemId()) {
 		// Menu item for selecting an image using a gallery application
+		// See http://stackoverflow.com/a/2507973/400663
 		case R.id.action_gallery:
 			final Intent i = new Intent(Intent.ACTION_PICK,
 		               android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -67,6 +67,7 @@ public class MainActivity extends Activity {
 
 		    switch(requestCode) { 
 		    // Handle image selected from gallery application instead of our grid
+		    // See http://stackoverflow.com/a/2508138/400663
 		    case ACTIVITY_SELECT_IMAGE:
 		        if(resultCode == RESULT_OK){  
 		            final Uri selectedImage = returnedIntent.getData();

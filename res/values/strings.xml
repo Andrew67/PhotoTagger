@@ -3,5 +3,7 @@
 
     <string name="app_name">Photo Tagger</string>
     <string name="action_gallery">Pick from Gallery</string>
+    <string name="img_selected">Selected Image</string>
+    <string name="no_desc">No Description Set</string>
 
 </resources>

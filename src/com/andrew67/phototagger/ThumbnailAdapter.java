@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+// See http://stackoverflow.com/questions/3680357/how-to-query-android-mediastore-content-provider-avoiding-orphaned-images
 public class ThumbnailAdapter extends BaseAdapter {
 	
 	// Context required for performing queries
@@ -79,7 +80,7 @@ public class ThumbnailAdapter extends BaseAdapter {
 				MediaStore.Images.Thumbnails.MICRO_KIND,
 				null
 		);
-    	imageView.setImageBitmap(thumbnail);
+     	imageView.setImageBitmap(thumbnail);
     	Log.d("ThumbnailAdapter", "render: " + cursor.getString(imgData));
         
         return imageView;
