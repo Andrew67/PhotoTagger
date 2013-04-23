@@ -25,11 +25,11 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position,
 					long id) {
-				final String imagePath = thumbnails.getImagePath(position);
-				//final Intent i = new Intent(MainActivity.this, TagActivity.class);
-				//i.putExtra("imagePath", imagePath);
-				Log.d("MainActivity", "path: " + imagePath);
-				//startActivity(i);
+				final String imgPath = thumbnails.getImagePath(position);
+				final Intent i = new Intent(MainActivity.this, TagActivity.class);
+				i.putExtra("imgPath", imgPath);
+				Log.d("MainActivity", "path: " + imgPath);
+				startActivity(i);
 			}
 		});
 	}
