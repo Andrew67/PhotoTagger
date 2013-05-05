@@ -12,12 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/img_selected" />
+    
+    <TextView
+        android:id="@+id/imageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/no_title"
+        android:textIsSelectable="true"
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/imageComment"
+        android:id="@+id/imageDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/no_desc"
-        android:textIsSelectable="true" />
+        android:textIsSelectable="true"
+        android:textSize="20sp" />
 
 </LinearLayout>

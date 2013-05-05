@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class TagActivity extends Activity {
 	
@@ -18,11 +19,18 @@ public class TagActivity extends Activity {
 		
 		final Intent i = getIntent();
 		final String imgPath = i.getExtras().getString("imgPath");
-		final ImageView image = (ImageView) findViewById(R.id.imageView);
-		image.setImageBitmap(
-				ScaledBitmapFactory.decodeSampledBitmapFromFile(imgPath, image.getWidth(), 300));
+		final File imgFile = new File(imgPath);
+		final String imgName = imgFile.getName();
+		final ImageMetadata imgData = new ImageMetadata(this, imgName);
 		
-		image.setOnClickListener(new View.OnClickListener() {
+		final TextView imageTitle = (TextView) findViewById(R.id.imageTitle);
+		final TextView imageDescription = (TextView) findViewById(R.id.imageDescription);
+		final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+		
+		imageView.setImageBitmap(
+				ScaledBitmapFactory.decodeSampledBitmapFromFile(imgPath, imageView.getWidth(), 300));
+		
+		imageView.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -30,6 +38,8 @@ public class TagActivity extends Activity {
 						Uri.fromFile(new File(imgPath))));
 			}
 		});
+		imageTitle.setText(imgData.getTitle());
+		imageDescription.setText(imgData.getDescription());
 	}
 	
 }
