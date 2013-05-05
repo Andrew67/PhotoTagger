@@ -61,8 +61,8 @@ public class TagActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
 		case R.id.action_save:
-			imgData.setTitle(imageTitle.getText().toString());
-			imgData.setDescription(imageDescription.getText().toString());
+			imgData.setTitle(imageTitle.getText().toString().trim());
+			imgData.setDescription(imageDescription.getText().toString().trim());
 			if (imgData.saveChanges()) {
 				Toast.makeText(this, R.string.save_ok, Toast.LENGTH_SHORT).show();
 			}
