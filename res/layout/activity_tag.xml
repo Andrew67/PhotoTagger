@@ -13,20 +13,20 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/img_selected" />
     
-    <TextView
+    <EditText
         android:id="@+id/imageTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/no_title"
-        android:textIsSelectable="true"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/imageDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/no_desc"
-        android:textIsSelectable="true"
-        android:textSize="20sp" />
+        android:textSize="15sp"
+        android:inputType="textMultiLine" >
+    </EditText>
 
 </LinearLayout>

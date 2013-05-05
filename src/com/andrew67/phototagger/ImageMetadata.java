@@ -35,8 +35,12 @@ public class ImageMetadata {
 				if (fileIn.hasNext()) {
 					title = fileIn.next();
 				}
+				description = "";
 				if (fileIn.hasNext()) {
 					description = fileIn.next();
+				}
+				while (fileIn.hasNext()) {
+					description += "\n" + fileIn.next();
 				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
